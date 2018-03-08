@@ -9,3 +9,4 @@
 ## MongoDB
 * [Install MongoDB on Ubuntu](MongodbSetup.md)
 * [MongoDB commands](MongoDBHelp.md)
+* [MongoDB with Java](MongoDBWithJava.md)
