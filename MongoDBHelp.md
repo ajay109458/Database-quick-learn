@@ -26,16 +26,51 @@ db.getUsers();
 show roles
 ```
 
+## Database 
+
+#### Create a database
+It will create database if it doesn't exists.
+```
+use <database>
+```
+Example:
+```
+use hotel
+```
+
+#### Drop database
+```
+db.dropDatabase()
+```
+
 #### List down the collections in current database
 ```
 show collections;
 db.getCollectionNames();
 ````
 
-#### Display records in the collection
+## Collection
+
+#### Create a collection
+```
+db.createCollection("employee")
+```
+
+#### Drop a collection
+```
+db.employee.drop()
+```
+
+## Document
+
+#### Display records in a collection
 1. Get all records 
     ```
       db.<collectionName>.find();
+    ```
+1. Get all records in pretty format
+    ```
+      db.<collectionName>.find().pretty();
     ```
 1. Get limited number of records 
     ```
@@ -72,7 +107,41 @@ Save operation will update if document already exists or it will insert a new do
 db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", field2: "value"});
 ```
 
-#### Administrative commands
+#### Remove documents
+Remove depending on filter criteria
+```
+db.employee.remove({'title':'Software Developer'})
+```
+Remove all documents
+```
+db.employee.remove()
+```
+
+#### Projection 
+Values to display from a document as part of find command output.
+```
+db.employee.find({},{"title":1,_id:0})
+```
+
+#### Skip 
+Number of documents to skip
+```
+db.employee.find().limit(10).skip(5)
+```
+
+#### Sort
+Sort the output of find command on basis of some property of document
+```
+db.employee.find().sort({name:1})
+```
+Note: 1 for sorting in ascending order and -1 for sorting in descending order.
+
+#### Create Index 
+```
+db.employee.ensureIndex({"title":1})
+```
+
+## Administrative commands
 1. Size of the collection
     ```
     db.<collectionName>.dataSize() 
@@ -86,3 +155,48 @@ db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", f
     db.<collectionName>.totalSize() 
     db.<collectionName>.totalIndexSize() 
     ```
+    
+## Sample Application : MongoDB integration with Java
+* Download mongo.jar and import in java project library
+
+#### Sample code
+```
+import com.mongodb.client.MongoDatabase; 
+import com.mongodb.MongoClient; 
+import com.mongodb.MongoCredential;  
+
+public class MongoDBSampleApplication { 
+   
+   public static void main( String args[] ) {  
+      
+      // Creating a Mongo client 
+      MongoClient mongo = new MongoClient( "localhost" , 27017 ); 
+   
+      // Creating Credentials 
+      MongoCredential credential; 
+      credential = MongoCredential.createCredential("username", "databasename", 
+         "password".toCharArray()); 
+      System.out.println("Connected to the database successfully");  
+      
+      // Accessing the database 
+      MongoDatabase database = mongo.getDatabase("databasename"); 
+      System.out.println("Credentials ::"+ credential);  
+      
+      // Create collection 
+      database.createCollection("firstcollection"); 
+      
+      // Get documents from collection
+      MongoCollection<Document> collection = database.getCollection("firstcollection);
+      
+      // Insert a document in the collection
+      Document document = new Document("title", "Software Developer") 
+      .append("id", 1)
+      .append("name", "Ajay Yadav") 
+      .append("age", 26) 
+      .append("by", "Ajay Yadav");  
+      
+      collection.insertOne(document); 
+
+   } 
+}
+```
