@@ -1,11 +1,11 @@
 # Database setup on ubuntu
 
 ## MySQL
-* [Install MySQL](MySQLSetup.md)
+* [Install MySQL on Ubuntu](MySQLSetup.md)
 
 ## PostgreSQL
-* [Install PostgreSQL](Postgresqlsetup.md)
+* [Install PostgreSQL on Ubuntu](Postgresqlsetup.md)
 
 ## MongoDB
-* [Install MongoDB](MongodbSetup.md)
+* [Install MongoDB on Ubuntu](MongodbSetup.md)
 * [MongoDB commands](MongoDBHelp.md)
