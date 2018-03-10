@@ -5,6 +5,7 @@
 
 ## PostgreSQL
 * [Install PostgreSQL on Ubuntu](Postgresqlsetup.md)
+* [PostgreSQL commands](PostgreSQLCommands.md)
 
 ## MongoDB
 * [Install MongoDB on Ubuntu](MongodbSetup.md)
