@@ -2,6 +2,7 @@
 
 ## MySQL
 * [Install MySQL on Ubuntu](MySQLSetup.md)
+* [MySQL with Java](MySQLWithJava.md)
 
 ## PostgreSQL
 * [Install PostgreSQL on Ubuntu](Postgresqlsetup.md)
