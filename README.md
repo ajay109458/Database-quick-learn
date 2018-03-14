@@ -6,6 +6,7 @@
 ## PostgreSQL
 * [Install PostgreSQL on Ubuntu](Postgresqlsetup.md)
 * [PostgreSQL commands](PostgreSQLCommands.md)
+* [PostgreSQL with Java](PostgresWithJava.md)
 
 ## MongoDB
 * [Install MongoDB on Ubuntu](MongodbSetup.md)
