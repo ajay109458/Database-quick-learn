@@ -1,15 +1,26 @@
-# Database setup on ubuntu
+# Database Quick Guide
 
 ## MySQL
-* [Install MySQL on Ubuntu](MySQLSetup.md)
+* [MySQL Installation](MySQLSetup.md)
+* [MySQL Commands]
 * [MySQL with Java](MySQLWithJava.md)
 
 ## PostgreSQL
-* [Install PostgreSQL on Ubuntu](Postgresqlsetup.md)
-* [PostgreSQL commands](PostgreSQLCommands.md)
+* [PostgreSQL Installation](Postgresqlsetup.md)
+* [PostgreSQL Commands](PostgreSQLCommands.md)
 * [PostgreSQL with Java](PostgresWithJava.md)
 
 ## MongoDB
-* [Install MongoDB on Ubuntu](MongodbSetup.md)
-* [MongoDB commands](MongoDBHelp.md)
+* [MongoDB Installation](MongodbSetup.md)
+* [MongoDB Commands](MongoDBHelp.md)
 * [MongoDB with Java](MongoDBWithJava.md)
+
+## Redis
+* [Redis Installation]()
+* [Redis Commands]()
+* [Redis with Java]()
+
+## Memcached
+* [Memcached Installation]()
+* [Memcached Commands]()
+* [Memcached with Java]()
